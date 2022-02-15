@@ -76,10 +76,10 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <a href=\"\" class=\"header-unfixed__item-link\">Tours</a>\n");
       out.write("                            </li>\n");
       out.write("                            <li class=\"header-unfixed__list-item\">\n");
-      out.write("                                <a href=\"\" class=\"header-unfixed__item-link\">About us</a>\n");
+      out.write("                                <a href=\"\" class=\"header-unfixed__item-link\">Ăn Uống</a>\n");
       out.write("                            </li>\n");
       out.write("                            <li class=\"header-unfixed__list-item\">\n");
-      out.write("                                <a href=\"\" class=\"header-unfixed__item-link\">Blog & press</a>\n");
+      out.write("                                <a href=\"\" class=\"header-unfixed__item-link\"></a>\n");
       out.write("                            </li>\n");
       out.write("                            <li class=\"header-unfixed__list-item\">\n");
       out.write("                                <a href=\"\" class=\"header-unfixed__item-link\">Contact Us</a>\n");

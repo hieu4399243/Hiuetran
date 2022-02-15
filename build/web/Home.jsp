@@ -37,10 +37,10 @@
                                 <a href="" class="header-unfixed__item-link">Tours</a>
                             </li>
                             <li class="header-unfixed__list-item">
-                                <a href="" class="header-unfixed__item-link">About us</a>
+                                <a href="" class="header-unfixed__item-link">Ăn Uống</a>
                             </li>
                             <li class="header-unfixed__list-item">
-                                <a href="" class="header-unfixed__item-link">Blog & press</a>
+                                <a href="" class="header-unfixed__item-link"></a>
                             </li>
                             <li class="header-unfixed__list-item">
                                 <a href="" class="header-unfixed__item-link">Contact Us</a>

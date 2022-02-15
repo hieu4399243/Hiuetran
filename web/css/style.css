@@ -16,6 +16,52 @@
     width: 100%;
     margin: 0 auto;
 }
+.header-sticky .header-container-unfixed{
+    transform: translateY(-7.8rem);
+}
+
+.header-sticky .header-container-fixed{
+    top: -78px;
+}
+
+.header-container-unfixed{
+    margin: 0 50px;
+    padding-top: 28px;
+    transform: translateY(0);
+    transition: transform linear 0.5s;
+}
+
+.header-unfixed{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 5rem;
+}
+
+.header-unfixed__logo{
+    display: flex;
+    justify-content: center;
+    
+    width: 7rem;
+}
+
+.header-unfixed__logo-img{
+    width: 4.5rem;
+    height: 100%;
+}
+
+.header-unfixed__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-unfixed__list-item{
+    margin: 0 2.2rem;
+    height: 1.8rem;
+}
+
+
 
 
 
