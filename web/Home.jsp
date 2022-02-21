@@ -167,7 +167,59 @@
                     </g>
                     </svg>
                 </button>
-                
+                <label for="close-checkbox" class="btn chat-with-us hide-on-mobile-tablet">Chat with us</label>
+                <input id="close-checkbox" class="close-input" type="checkbox">
+                <div class="header-chat-form hide-on-mobile">
+                    <div class="chat-form-close">
+                        <label for="close-checkbox" class="chat-form-close__label">
+                            Close
+                            <div class="chat-form-close__icon">
+                                <i class="fal fa-times"></i>
+                            </div>
+                        </label>
+                    </div> 
+                </div>
+                <div class="chat-form-group">
+                    <h4 class="chat-form__heading chat-form-animation">Have a chat with our team</h4>
+                    <div class="chat-form__phone chat-form-animation">
+                        <a href="tel:1-800-894-5712" class="chat-form__phone-link">US Toll Free: 1-800-894-5712</a>
+                        <a href="tel:1-800-764-042" class="chat-form__phone-link">Australia Toll Free:1-800-764-042</a>
+                        <a href="tel:+353-1-288-9355" class="chat-form__phone-link">Ireland: +353-1-288-9355</a>
+                    </div>
+                    <span class="chat-form__introduction chat-form-animation">Or fill in the form below and we'll be in touch</span>
+                    <form action="" class="chat-form__form chat-form-animation">
+                        <div class="form-input-group">
+                            <input type="text" placeholder="First Name" class="form-input form-input--first-name">
+                            <input type="text" placeholder="Last Name" class="form-input form-input--last-name">
+                        </div>
+                        <div class="form-input-group">
+                            <input type="email" placeholder="Email" class="form-input form-email">
+                        </div>
+                        <div class="form-input-group form-input-group--dark-text">
+                            <input id="phone" class="form-input form-input--phone" name="phone" type="tel" autocomplete="off" data-intl-tel-input-id="0" placeholder="Phone">
+                        </div>
+                        <div class="form-input-group">
+                            <textarea name="" id="" class="form-input form-input--message" cols="30" rows="10" placeholder="Where do you like to go?"></textarea>
+                        </div>
+                        <div class="form-input-group">
+                            <input id="form-input-agreement" type="checkbox" class="form-input--agree">
+                            <label class="form-input__agree-text" for="form-input-agreement">Sign up to receive travel inspiration, exclusive offers & our latest news.</label>
+                        </div>
+                        <div class="form-input--recapcha">
+                            <div>   
+                                <iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lcwd9wZAAAAAOY6Kvt50j4iOOele826OztQ7LTA&amp;co=aHR0cHM6Ly93d3cuYWRhbXNhbmRidXRsZXIuY29tOjQ0Mw..&amp;hl=en&amp;v=Eyd0Dt8h04h7r-D86uAD1JP-&amp;theme=light&amp;size=normal&amp;cb=q3vo33l02pxy" width="304" height="78" role="presentation" name="a-s3ql7135gxk0" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" tabindex="7">
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="form-input--submit">
+                            <buttom href="" class="btn form-btn-submit">
+                                Submit
+                            </buttom>
+                        </div>
+
+                    </form>
+                </div>
+
             </header>
         </main>
     </body>
