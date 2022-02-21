@@ -154,7 +154,7 @@
                     </nav>
                 </div>
                 <button class="scroll-top-button">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 19 10.9" style="enable-background:new 0 0 19 10.9;" xml:space="preserve" class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 19 10.9" style="enable-background:new 0 0 19 10.9;" xml:space="preserve" class="">
                     <style>
                         .st0{
                             fill:none;
@@ -163,10 +163,11 @@
                         }
                     </style>
                     <g id="Group_16" transform="translate(9.778 18.493) rotate(180)">
-                        <path id="Path_13" class="st0" d="M-8.7,8.2l9.2,9.2l8.7-9.2"></path>
+                    <path id="Path_13" class="st0" d="M-8.7,8.2l9.2,9.2l8.7-9.2"></path>
                     </g>
-                </svg>
-            </button>
+                    </svg>
+                </button>
+                
             </header>
         </main>
     </body>
