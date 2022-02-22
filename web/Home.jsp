@@ -14,8 +14,9 @@
         <link rel="icon" href="./img/brand/icon/favicon.png" sizes="192x192">
         <link rel="apple-touch-icon" href="./img/brand/icon/favicon.png">
         <link rel="stylesheet" href="./font/themify/themify-icons/themify-icons.css">
-
+        <link href="css/resetcss.css" rel="stylesheet" type="text/css"/>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/grid.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     </head>
@@ -220,7 +221,67 @@
                     </form>
                 </div>
 
+
             </header>
+            <div class="content">
+                <section class="content-heading">
+                    <div class="content-heading-group">
+                        <div class="content-heading__background">
+                        <video id="content-heading__video" width="100%" height="100%" playsinline="" muted="" autoplay="" loop="">
+                            <source src="https://chuong3x.github.io/natalieandcharlie/asset/img/videos/intro-Vid-V2-No-Sound-copy.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    </div>
+                </section>
+            </div>
+            
+
         </main>
+        <script src="js/main.js" type="text/javascript"></script>
+        <script>
+            var input = document.querySelector("#phone");
+            window.intlTelInput(input, {
+                utilsScript: "build/js/utils.js",
+            });
+        </script>
+        <script type="module">
+            import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
+            const swiperExp = new Swiper('.swiper-exp', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 3,
+            // Navigation arrows
+            navigation: {
+            nextEl: '.swiper-button-next-exp',
+            prevEl: '.swiper-button-prev-exp',
+            },
+            });
+
+            const swiperSays = new Swiper('.swiper-says', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 1,
+            // Navigation arrows
+            navigation: {
+            nextEl: '.swiper-button-next-says',
+            prevEl: '.swiper-button-prev-says',
+            },
+            });
+
+            const swiperFooter = new Swiper('.swiper-footer', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 5,
+            // Navigation arrows
+            navigation: {
+            nextEl: '.swiper-button-next-footer',
+            prevEl: '.swiper-button-prev-footer',
+            },
+            });
+        </script>
     </body>
 </html>
