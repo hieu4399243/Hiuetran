@@ -488,6 +488,138 @@ h1, h2, h3, h4, h5, h6{
     top: 0;
     z-index: 0;
 }
+#content-heading__video{
+    object-fit: cover;
+}
+
+.content-heading__foreground{
+    position: relative;
+    width: 100%;
+    height: calc(60% + 3rem) ;
+    top: calc(40% - 3rem);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-heading__brand{
+    font-size: 8rem;
+    color: var(--white-color);
+    font-weight: 300;
+}
+
+.content-heading__slogan{
+    font-size: 5rem;
+    color: var(--white-color);
+    font-weight: 300;
+}
+
+.mt-34{
+    margin-top: 3.4rem;
+}
+
+.content-heading__nav{
+    display: flex;
+}
+
+.content-heading__link{
+    height: 3rem;
+    margin-left: 2.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.content-heading__link:first-child{
+    margin-left: 0.2rem;
+}
+
+.content-heading-link__name{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-family: Gt-Light, sans-serif;
+    font-weight: 300;
+    color: var(--white-color);
+    letter-spacing: 0.4rem;
+}
+
+.content-heading-link__icon{
+    position: relative;
+    margin-left: 1.4rem;
+    border: 0.1rem solid var(--white-color);
+    border-radius: 50%;
+    height: 3.2rem;
+    width: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-heading-member__group{
+    display: flex;
+    height: 5rem;
+    margin-bottom: 4.4rem;
+}
+
+.content-heading-member__group--flex-right{
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.content-heading__member{
+    margin: 0 2.4rem;
+}
+
+.content-heading__member:last-child{
+    margin-right: 4.8rem;
+}
+
+.content-heading__member-logo{
+    display: block;
+}
+
+.content-heading__member--virtuoso{
+    height: 4rem;
+    width: 22rem;
+    margin-left: 4.2rem;
+}
+
+.content-heading__member--iata{
+    height: 4.6rem;
+    width: 7.2rem;
+}
+
+.content-heading__member--alist{
+    height: 5rem;
+}
+
+.content-heading__member--luxury-travel{
+    height: 3.6rem;
+}
+
+.content-heading__member--condenast{
+    height: 2rem;
+}
+
+.content-heading__member--thenewyorktimes{
+    height: 2.2rem;
+}
+
+.content-heading__member--ustravel{
+    height: 5rem;
+}
+
+.slow-appear{
+    opacity: 0;
+    display: none;
+    transition: opacity linear 0.2s;
+    animation: fadeIn linear 0.3s;
+}
+
+
+
+
+
 
 
 

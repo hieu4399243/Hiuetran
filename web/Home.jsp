@@ -227,15 +227,251 @@
                 <section class="content-heading">
                     <div class="content-heading-group">
                         <div class="content-heading__background">
-                        <video id="content-heading__video" width="100%" height="100%" playsinline="" muted="" autoplay="" loop="">
-                            <source src="https://chuong3x.github.io/natalieandcharlie/asset/img/videos/intro-Vid-V2-No-Sound-copy.mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                        </video>
+                            <video id="content-heading__video" width="100%" height="100%" playsinline="" muted="" autoplay="" loop="">
+                                <source src="https://chuong3x.github.io/natalieandcharlie/asset/img/videos/intro-Vid-V2-No-Sound-copy.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
+                    <div class="content-heading__foreground">
+                        <div class="grid wide">
+                            <div class="row">
+                                <div class="col l-12 m-12 s-12 slow-appear">
+                                    <h1 class="content-heading__brand">Natalie & Charlie</h1>
+                                </div>
+                                <div class="col l-12 m-12 s-12 slow-appear">
+                                    <h3 class="content-heading__slogan">Hallmark of Luxury Travel</h3>
+                                </div>
+                            </div>
+                            <div class="row no-gutters mt-34">
+                                <div class="col l-12 m-12 s-12">
+                                    <div class="content-heading__nav slow-appear">
+                                        <a href="" class="content-heading__link">
+                                            <span class="content-heading-link__name">Our experiences</span>
+                                            <span class="content-heading-link__icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="7.325" height="12.173" viewBox="0 0 7.325 12.173" class="">
+                                                <g id="Group_16" data-name="Group 16" transform="translate(9.248 11.643) rotate(180)">
+                                                <path id="Path_13" data-name="Path 13" d="M5.718,0,0,5.718,5.718,11.1" transform="translate(3 0)" fill="none" stroke="#fff" stroke-width="1.5"></path>
+                                                </g>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <a href="" class="content-heading__link">
+                                            <span class="content-heading-link__name">Plan your journey</span>
+                                            <span class="content-heading-link__icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="7.325" height="12.173" viewBox="0 0 7.325 12.173" class="">
+                                                <g id="Group_16" data-name="Group 16" transform="translate(9.248 11.643) rotate(180)">
+                                                <path id="Path_13" data-name="Path 13" d="M5.718,0,0,5.718,5.718,11.1" transform="translate(3 0)" fill="none" stroke="#fff" stroke-width="1.5"></path>
+                                                </g>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <a href="" class="content-heading__link">
+                                            <span class="content-heading-link__name">Live Webinars</span>
+                                            <span class="content-heading-link__icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="7.325" height="12.173" viewBox="0 0 7.325 12.173" class="">
+                                                <g id="Group_16" data-name="Group 16" transform="translate(9.248 11.643) rotate(180)">
+                                                <path id="Path_13" data-name="Path 13" d="M5.718,0,0,5.718,5.718,11.1" transform="translate(3 0)" fill="none" stroke="#fff" stroke-width="1.5"></path>
+                                                </g>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="grid">
+                                    <div class="row">
+                                        <div class="col l-4 ml-4 m-12 s-12 slow-appear content-heading-member__group">
+                                            <a href="" class="content-heading__member">
+                                                <img class="content-heading__member-logo content-heading__member--virtuoso" src="https://chuong3x.github.io/natalieandcharlie/asset/img/brand/logo/licenced_footer.svg" alt="Virtuoso Member">
+                                            </a>
+                                        </div>
+                                        <div class="col l-8 ml-8 m-12 s-12 slow-appear content-heading-member__group content-heading-member__group--flex-right">
+                                            <span class="content-heading__member">
+                                                <img class="content-heading__member-logo content-heading__member--iata" src="https://chuong3x.github.io/natalieandcharlie/asset/img/members/virtuoso_member_logo_hero.svg" alt="IATA Member">
+                                            </span>
+                                            <span class="content-heading__member">
+                                                <img class="content-heading__member-logo content-heading__member--alist" src="https://chuong3x.github.io/natalieandcharlie/asset/img/members/luxury_travel_logo-400x144.png" alt="AList Member">
+                                            </span>
+                                            <span class="content-heading__member">
+                                                <img class="content-heading__member-logo content-heading__member--luxury-travel" src="https://chuong3x.github.io/natalieandcharlie/asset/img/members/luxury_travel_logo-400x144.png" alt="Luxury Travel Member">
+                                            </span>
+                                            <span class="content-heading__member">
+                                                <img class="content-heading__member-logo content-heading__member--condenast" src="https://chuong3x.github.io/natalieandcharlie/asset/img/members/Conde%CC%81_Nast_logo.svg" alt="Conde Nast Member">
+                                            </span>
+                                            <span class="content-heading__member">
+                                                <img class="content-heading__member-logo content-heading__member--thenewyorktimes" src="https://chuong3x.github.io/natalieandcharlie/asset/img/members/Conde%CC%81_Nast_logo.svg" alt="The New York Times Member">
+                                            </span>
+                                            <span class="content-heading__member">
+                                                <img class="content-heading__member-logo content-heading__member--ustravel" src="https://chuong3x.github.io/natalieandcharlie/asset/img/members/US-TRAVELSPECIALISTS-2021-SEAL-with-wm-01.svg" alt="US Travel Special list Member">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                </section>
+                <section class="content-intro">
+                    <div class="grid wide">
+                        <div class="row mobile-tablet-flex-reverse">
+                            <div class="col l-6 m-12 s-12">
+                                <img src="./img/content/bryan-walker-unsplash-768x960.jpg" alt="" class="content-intro__main-img">
+                            </div>
+                            <div class="col l-6 m-12 s-12">
+                                <div class="content-intro__group">
+                                    <h3 class="content-section__heading content-intro__heading">
+                                        Magical memories,
+                                        <br>
+                                        Bespoke experiences
+                                    </h3>
+                                    <p class="content-section__disc content-intro__disc">
+                                        Once you have travelled the voyage never ends. Natalie &amp; Charlie will open a world of wonders and create magical memories that will stay with you far beyond your travels.
+                                        <br>
+                                        <br>
+                                        Diverge from the typical tourist destinations in favour of unique, authentic experiences. Experiences designed in the most inspiring surroundings that will be yours, and yours only. Journeys that create memorable moments and Natalie &amp; Charlie’s bespoke itineraries will make this happen. The wonders of the world are within your reach. 
+                                    </p>
+                                    <a href="" class="link-to">Meet our team</a>
+                                    <div class="content-intro__secondary hide-on-mobile-tablet">
+                                        <img src="./img/content/mylon-ollila-unsplash-768x508.jpg" alt="" class="content-intro__secondary-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
+                <section class="content-exp">
+                    <div class="grid wide">
+                        <div class="row">
+                            <div class="col l-6 m-12 s-12">
+                                <h3 class="content-section__heading content-exp__heading">
+                                    Tailor Made Journeys
+                                </h3>
+                            </div>
+                            <div class="col l-6 m-12 s-12">
+                                <div class="content-exp__group">
+                                    <p class="content-section__disc content-exp__disc">
+                                        N&C design itineraries for our clients that others simply cannot, whether around a theme or a private experience. Our team of highly experienced consultants listen, understand and then create a tailor-made journey for you. We believe that travel should not only enrich your perception, understanding, and appreciation of the World, but that it should also allow you to support the local communities you visit. We enable you to explore with purpose, enthusiasm, and a new-found appreciation for the art of travel. Experience diverse cultures; immerse yourself in authentic experiences; take back the moment and reconnect with a joyous attitude towards life. 
+                                    </p>
+                                    <a href="" class="link-to">Our experiences</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-exp-container">
+                        <div class="content-exp-slide__control">
+                            <div class="btn-primary content-exp-slide__btn swiper-button-next-exp">
+                                <i class="fas fa-chevron-right btn-primary__icon"></i>
+                            </div>
+                            <div class="btn-primary content-exp-slide__btn swiper-button-prev-exp">
+                                <i class="fas fa-chevron-left btn-primary__icon"></i>
+                            </div>
+                        </div>
+                        <div class="grid wide">
+                            <div class="row">
+                                <div class="col l-12 m-12 s-12 ">
+                                    <div class="content-exp-slide__group">
+                                        <div class="content-exp-slide__slider swiper-exp">
+                                            <div class="swiper-wrapper">
+                                                <div class="content-exp-slide__item swiper-slide">
+                                                    <a href="" class="content-exp-slide__item-link">
+                                                        <img src="./img/content/jamie-haughton.jpg" alt="" class="content-exp-slide__img">
+                                                        <span class="content-exp-slide__item-infor">
+                                                            <h5 class="content-exp-slide__text">
+                                                                Strange Creatures of Madagascar & South Africa
+                                                            </h5>
+                                                        </span>
+                                                        <div class="gradient-overlay"></div>
+                                                    </a>
+                                                </div>
+                                                <div class="content-exp-slide__item swiper-slide">
+                                                    <a href="" class="content-exp-slide__item-link">
+                                                        <img src="./img/content/okonjima_sunset-2000x1333.jpg" alt="" class="content-exp-slide__img">
+                                                        <span class="content-exp-slide__item-infor">
+                                                            <h5 class="content-exp-slide__text">
+                                                                Enchanting Namibia
+                                                            </h5>
+                                                        </span>
+                                                        <div class="gradient-overlay"></div>
+                                                    </a>
+                                                </div>
+                                                <div class="content-exp-slide__item swiper-slide">
+                                                    <a href="" class="content-exp-slide__item-link">
+                                                        <img src="./img/content/rsz_irish_ruins_wow_.jpg" alt="" class="content-exp-slide__img">
+                                                        <span class="content-exp-slide__item-infor">
+                                                            <h5 class="content-exp-slide__text">
+                                                                Gay Ireland
+                                                            </h5>
+                                                        </span>
+                                                        <div class="gradient-overlay"></div>
+                                                    </a>
+                                                </div>
+                                                <div class="content-exp-slide__item swiper-slide">
+                                                    <a href="" class="content-exp-slide__item-link">
+                                                        <img src="./img/content/sean-unsplash-2000x1330.jpg" alt="" class="content-exp-slide__img">
+                                                        <span class="content-exp-slide__item-infor">
+                                                            <h5 class="content-exp-slide__text">
+                                                                Wild Romance in Madagascar
+                                                            </h5>
+                                                        </span>
+                                                        <div class="gradient-overlay"></div>
+                                                    </a>
+                                                </div>
+                                                <div class="content-exp-slide__item swiper-slide">
+                                                    <a href="" class="content-exp-slide__item-link">
+                                                        <img src="./img/content/rsz-unsplash.jpg" alt="" class="content-exp-slide__img">
+                                                        <span class="content-exp-slide__item-infor">
+                                                            <h5 class="content-exp-slide__text">
+                                                                Flavours of Scotland
+                                                            </h5>
+                                                        </span>
+                                                        <div class="gradient-overlay"></div>
+                                                    </a>
+                                                </div>
+                                                <div class="content-exp-slide__item swiper-slide">
+                                                    <a href="" class="content-exp-slide__item-link">
+                                                        <img src="./img/content/istock.jpg" alt="" class="content-exp-slide__img">
+                                                        <span class="content-exp-slide__item-infor">
+                                                            <h5 class="content-exp-slide__text">
+                                                                Gorillas in the Mist in Rwanda
+                                                            </h5>
+                                                        </span>
+                                                        <div class="gradient-overlay"></div>
+                                                    </a>
+                                                </div>
+                                                <div class="content-exp-slide__item swiper-slide">
+                                                    <a href="" class="content-exp-slide__item-link">
+                                                        <img src="./img/content/magda-v.jpg" alt="" class="content-exp-slide__img">
+                                                        <span class="content-exp-slide__item-infor">
+                                                            <h5 class="content-exp-slide__text">
+                                                                Quintessential England: From London to the Cotswolds
+                                                            </h5>
+                                                        </span>
+                                                        <div class="gradient-overlay"></div>
+                                                    </a>
+                                                </div>
+                                                <div class="content-exp-slide__item swiper-slide">
+                                                    <a href="" class="content-exp-slide__item-link">
+                                                        <img src="./img/content/linmiao-xu.jpg" alt="" class="content-exp-slide__img">
+                                                        <span class="content-exp-slide__item-infor">
+                                                            <h5 class="content-exp-slide__text">
+                                                                Iceland Westfjords – Self-drive adventure
+                                                            </h5>
+                                                        </span>
+                                                        <div class="gradient-overlay"></div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
-            
+
 
         </main>
         <script src="js/main.js" type="text/javascript"></script>
