@@ -4,6 +4,7 @@
     Author     : Admin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@
             />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Gọi và đặt món - Du Lịch  Royal</title>
+        <title>Gọi và đặt món - Du Lịch  </title>
 
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
@@ -338,11 +339,12 @@
                     <div class="col-md-3 mb-5">
                         <h3>Các món ăn được ưa thích</h3>
                         <ul class="list-group">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                            <li class="list-group-item">A fourth item</li>
-                            <li class="list-group-item">And a fifth one</li>
+                            <c:forEach items="${listCategories}" var="C">
+                                <li class="list-group-item">${C.name}</li
+                                
+                            </c:forEach>
+                            
+                            
                         </ul>
                     </div>
                     <div class="col-md-9">

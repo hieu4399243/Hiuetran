@@ -26,6 +26,7 @@ public class FoodController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
          List<Category> listCategories = new CategoryDAO().getAllCategories();
         request.getRequestDispatcher("Food.jsp").forward(request, response);
+        request.setAttribute("listCategories", listCategories);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
