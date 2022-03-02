@@ -6,7 +6,7 @@
 package dao;
 
 import context.DBcontext;
-import entity.Category;
+import entity.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,26 +19,31 @@ import java.util.logging.Logger;
  *
  * @author Admin
  */
-public class CategoryDAO {
+public class ProductDAO {
 
-    public List<Category> getAllCategories() {
-        List<Category> list = new ArrayList<>();
+    public List<Product> getAllProducts() {
+        List<Product> list = new ArrayList<>();
         try {
-            String sql = "Select * from category";
+            String sql = "select * from Product";
             Connection conn = new DBcontext().getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
- //              Category category = new Category(rs.getInt(1), rs.getString(2));
-                Category category = Category.builder()
-                .id(rs.getInt(1))
-                .name(rs.getString(2)).build();
-
-                list.add(category);
+                Product product = Product.builder()
+                        .id(rs.getInt(1))
+                        .name(rs.getString(2))
+                        .quantity(rs.getInt(3))
+                        .price(rs.getDouble(4))
+                        
+                        .imageUrl(rs.getString(5))
+                        .createdDate(rs.getString(6))
+                        .categoryId(rs.getInt(7)).build();
+                list.add(product);
             }
         } catch (Exception ex) {
             Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
+
 }

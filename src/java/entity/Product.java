@@ -14,10 +14,16 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Category {
+public class Product {
     private int id;
     private String name;
+    private int quantity;
+    private double price;
+    private String imageUrl;
+    private String createdDate;
+    private int categoryId;
 
+    
     
     
 }
