@@ -340,7 +340,7 @@
                         <h3 style="color:red">Các món ăn được ưa thích</h3>
                         <ul class="list-group">
                             <c:forEach items="${listCategories}" var="C">
-                                <li class="list-group-item">${C.name}</li>
+                                <li class="list-group-item"><a href="categoryfind?categoryID=${C.id}">${C.name}</a></li>
                                 
                             </c:forEach>
                             
