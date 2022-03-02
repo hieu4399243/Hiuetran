@@ -21,6 +21,8 @@ import java.util.logging.Logger;
  */
 public class ProductDAO {
 
+
+
     public List<Product> getAllProducts() {
         List<Product> list = new ArrayList<>();
         try {
@@ -72,4 +74,18 @@ public class ProductDAO {
         return list;
     }
 
+     public int getTotalProducts() {
+        try {
+            String sql = "select count(id)  from Product ";
+            Connection conn = new DBcontext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
 }

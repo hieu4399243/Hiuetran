@@ -28,7 +28,13 @@ public class FoodController extends HttpServlet {
         List<Category> listCategories = new CategoryDAO().getAllCategories();
         List<Product> listProducts = new ProductDAO().getAllProducts();
         request.setAttribute("listCategories", listCategories);
-        request.setAttribute("listProducts", listProducts);
+        int page=1;
+        String pageStr=request.getParameter("page");
+        if(pageStr!=null){
+            page = Integer.parseInt(pageStr);
+        }
+        final int PAGE_SIZE=6;
+        request.setAttribute("listProducts", listProducts.subList((page-1)*PAGE_SIZE,page*PAGE_SIZE));
         request.getRequestDispatcher("Food.jsp").forward(request, response);
     }
 

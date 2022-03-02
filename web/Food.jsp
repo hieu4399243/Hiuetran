@@ -341,71 +341,91 @@
                         <ul class="list-group">
                             <c:forEach items="${listCategories}" var="C">
                                 <li class="list-group-item"><a href="categoryfind?categoryID=${C.id}">${C.name}</a></li>
-                                
+
                             </c:forEach>
-                            
-                            
+
+
                         </ul>
                     </div>
+
                     <div class="col-md-9">
-                        <h3>Đặt món ngay</h3>
+                        <h3 style="color: red; text-align: center; font: 20px">Đặt món ngay</h3>
+                        <nav aria-label="..." class="d-flex justify-content-center">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <span class="page-link">Previous</span>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="food?page=1">1</a></li>
+                                <li class="page-item"><a class="page-link" href="food?page=2">2</a></li>
+                                <li class="page-item"><a class="page-link" href="food?page=3">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <br><br>
                         <div
                             class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 justify-content-center"
                             >
                             <c:forEach items="${listProducts}" var="P">
-                            <div class="col mb-5">
-                                <div class="card h-100">
-                                    <!-- Sale badge-->
-                                    <div
-                                        class="badge bg-dark text-white position-absolute"
-                                        style="top: 0.5rem; right: 0.5rem"
-                                        >
-                                        Sale
-                                    </div>
-                                    <!-- Product image-->
-                                    <img
-                                        class="card-img-top"
-                                        src="${P.imageUrl}"
-                                        alt="..."
-                                        />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">${P.name}</h5>
-                                            <!-- Product reviews-->
-                                            <div
-                                                class="d-flex justify-content-center small text-warning mb-2"
-                                                >
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                            </div>
-                                            <!-- Product price-->
-                                            <span class="text-muted text-decoration-line-through"
-                                                  >$20.00</span
+                                
+                               
+                                <div class="col mb-5">
+                                    
+                                    <div class="card h-100">
+                                        <!-- Sale badge-->
+                                        <div
+                                            class="badge bg-dark text-white position-absolute"
+                                            style="top: 0.5rem; right: 0.5rem"
                                             >
-                                            $${P.price}
+                                            Sale
                                         </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center">
-                                            <a class="btn btn-outline-dark mt-auto" href="#"
-                                               >Đặt món</a
-                                            >
+                                        <!-- Product image-->
+                                        <img
+                                            class="card-img-top"
+                                            src="${P.imageUrl}"
+                                            alt="..."
+                                            />
+                                        <!-- Product details-->
+                                        <div class="card-body p-4">
+                                            <div class="text-center">
+                                                <!-- Product name-->
+                                                <h5 class="fw-bolder">${P.name}</h5>
+                                                <!-- Product reviews-->
+                                                <div
+                                                    class="d-flex justify-content-center small text-warning mb-2"
+                                                    >
+                                                    <div class="bi-star-fill"></div>
+                                                    <div class="bi-star-fill"></div>
+                                                    <div class="bi-star-fill"></div>
+                                                    <div class="bi-star-fill"></div>
+                                                    <div class="bi-star-fill"></div>
+                                                </div>
+                                                <!-- Product price-->
+                                                <span class="text-muted text-decoration-line-through"
+                                                      >$20.00</span
+                                                >
+                                                $${P.price}
+                                            </div>
+                                        </div>
+                                        <!-- Product actions-->
+                                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                            <div class="text-center">
+                                                <a class="btn btn-outline-dark mt-auto" href="#"
+                                                   >Đặt món</a
+                                                >
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             </c:forEach>
-                            
+
                         </div>
+                        
                     </div>
                 </div>
             </div>
+
         </section>
         <!-- Footer-->
         <footer class="footer">
