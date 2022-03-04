@@ -1298,6 +1298,19 @@ h1, h2, h3, h4, h5, h6{
     margin-left: 2rem;
     font-size: 2rem;
 }
-
+.brought-number-info {
+    position: fixed;
+    bottom: 200px;
+    right: 50px;
+    background-color: red;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    flex-direction: column;
+}
 
 

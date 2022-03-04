@@ -8,6 +8,14 @@
         <servlet-name>SearchFood</servlet-name>
         <servlet-class>control.SearchFood</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetailController</servlet-name>
+        <servlet-class>control.DetailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Addfood</servlet-name>
+        <servlet-class>control.Addfood</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FoodController</servlet-name>
         <url-pattern>/food</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>SearchFood</servlet-name>
         <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailController</servlet-name>
+        <url-pattern>/detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Addfood</servlet-name>
+        <url-pattern>/add</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

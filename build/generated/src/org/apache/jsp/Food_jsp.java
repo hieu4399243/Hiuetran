@@ -975,6 +975,7 @@ public final class Food_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                                            Sale\n");
           out.write("                                        </div>\n");
           out.write("                                        <!-- Product image-->\n");
+          out.write("                                       \n");
           out.write("                                        <img\n");
           out.write("                                            class=\"card-img-top\"\n");
           out.write("                                            src=\"");

@@ -39,9 +39,9 @@ public class CategoryFind extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             int categoryId = Integer.parseInt(request.getParameter("categoryID"));
-            List<Category> listCategories = new CategoryDAO().getAllCategories();
+           
             List<Product> listProducts = new ProductDAO().getProductsByCategoryId(categoryId);
-            request.setAttribute("listCategories", listCategories);
+           
             request.setAttribute("listProducts", listProducts);
 
             request.getRequestDispatcher("Food.jsp").forward(request, response);

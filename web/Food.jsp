@@ -55,7 +55,7 @@
                                 <a href="Tours.jsp" class="header-unfixed__item-link">Tours</a>
                             </li>   
                             <li class="header-unfixed__list-item">
-                                <a href="Food.jsp" class="header-unfixed__item-link">Ăn uống</a>
+                                <a href="/ProjectAssignment/food" class="header-unfixed__item-link">Ăn uống</a>
                             </li>
                             <li class="header-unfixed__list-item">
                                 <a href="Home.jsp" class="header-unfixed__item-link">About us</a>
@@ -351,7 +351,7 @@
                     <div class="col-md-3 mb-5">
                         <h3 style="color:red">Các món ăn được ưa thích</h3>
                         <ul class="list-group">
-                            <c:forEach items="${listCategories}" var="C">
+                            <c:forEach items="${sessionScope.listCategories}" var="C">
                                 <li class="list-group-item"><a href="categoryfind?categoryID=${C.id}">${C.name}</a></li>
 
                             </c:forEach>
@@ -397,12 +397,13 @@
                                             Sale
                                         </div>
                                         <!-- Product image-->
-                                        <a href="detail?productId=${P.id}"
+                                        <a href="detail?productId=${P.id}">
                                         <img
                                             class="card-img-top"
                                             src="${P.imageUrl}"
                                             alt="..."
                                             />
+                                        </a>
                                         <!-- Product details-->
                                         <div class="card-body p-4">
                                             <div class="text-center">
