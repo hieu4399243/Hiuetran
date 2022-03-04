@@ -333,6 +333,18 @@
 
 
         <!-- Section-->
+        
+        <form action="search" class=" d-flex mx-auto">
+            
+            <input type="search" id="search" name="keyword" placeholder="Search" style="margin-right: 5px;
+                   margin-left:600px; margin-top: 100px;padding: 7px 30px;
+                   border: 2px solid red;
+                   border-radius: 3px"><br><br>
+            
+            <button class="btn btn-outline-success" type="submit" style="margin-top: 100px">Search</button>
+        </form>
+        
+        
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row">
@@ -350,28 +362,32 @@
 
                     <div class="col-md-9">
                         <h3 style="color: red; text-align: center; font: 20px">Đặt món ngay</h3>
-                        <nav aria-label="..." class="d-flex justify-content-center">
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <span class="page-link">Previous</span>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="food?page=1">1</a></li>
-                                <li class="page-item"><a class="page-link" href="food?page=2">2</a></li>
-                                <li class="page-item"><a class="page-link" href="food?page=3">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <c:choose>
+                            <c:when test="${listProducts==null || listProducts.size()==0}">
+                                Not founds
+                            </c:when>
+                            <c:otherwise>
+                                <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+                                    <ul class="pagination">
+                                        <li class="page-item"><a class="page-link" href="food?page=${page-1}">Previous</a></li>
+                                            <c:forEach begin="1" end="${totalPage}" var="i">
+                                            <li class="page-item ${i == page?"active":""}"><a class="page-link" href="food?page=${i}">${i}</a></li>
+                                            </c:forEach>
+                                        <li class="page-item"><a class="page-link" href="food?page=${page+1}">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </c:otherwise>
+                        </c:choose>
+
                         <br><br>
                         <div
                             class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 justify-content-center"
                             >
                             <c:forEach items="${listProducts}" var="P">
-                                
-                               
+
+
                                 <div class="col mb-5">
-                                    
+
                                     <div class="card h-100">
                                         <!-- Sale badge-->
                                         <div
@@ -421,7 +437,7 @@
                             </c:forEach>
 
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

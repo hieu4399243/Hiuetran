@@ -4,9 +4,17 @@
         <servlet-name>FoodController</servlet-name>
         <servlet-class>control.FoodController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchFood</servlet-name>
+        <servlet-class>control.SearchFood</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FoodController</servlet-name>
         <url-pattern>/food</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchFood</servlet-name>
+        <url-pattern>/search</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
