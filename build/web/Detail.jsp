@@ -397,7 +397,6 @@
                                             Sale
                                         </div>
                                         <!-- Product image-->
-                                        <a href="detail?productId=${P.id}"
                                         <img
                                             class="card-img-top"
                                             src="${P.imageUrl}"
