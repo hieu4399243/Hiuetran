@@ -1,23 +1,15 @@
 <%-- 
-    Document   : Food
-    Created on : Feb 23, 2022, 9:49:56 PM
+    Document   : footer
+    Created on : Mar 7, 2022, 3:59:15 AM
     Author     : Admin
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-            />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Gọi và đặt món - Du Lịch  </title>
-
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
             rel="stylesheet"
@@ -35,21 +27,6 @@
 
     </head>
     <body>
-        
-
-
-        <div class="container" style="min-height: 1000px">
-            <div class="alert alert-success text-center mt-5" role="alert" >
-                Order successfully, Thank you very much...
-                <div class="text-center mt-2">
-                    <a class="btn btn-outline-primary" href="food">Continue Shopping</a>
-                </div>
-            </div>
-        </div>
-
-
-
-
         <!-- Footer-->
         <footer class="footer">
             <section class="footer-top">

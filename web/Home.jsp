@@ -40,7 +40,7 @@
                                 <a href="Tours.jsp" class="header-unfixed__item-link">Tours</a>
                             </li>
                             <li class="header-unfixed__list-item">
-                                <a href="Food.jsp" class="header-unfixed__item-link">ăn uống</a>
+                                <a href="/ProjectAssignment/food" class="header-unfixed__item-link">ăn uống</a>
                             </li>
                             <li class="header-unfixed__list-item">
                                 <a href="" class="header-unfixed__item-link">About us</a>
@@ -76,21 +76,21 @@
                         </a>
                         <ul class="header-fixed__list hide-on-mobile-tablet">
                             <li class="header-fixed__list-item">
-                                <a href="" class="header-fixed__item-link">Trang chủ</a>
+                                <a href="Home.jsp" class="header-fixed__item-link">Trang chủ</a>
 
                             </li>
                             <li class="header-fixed__list-item">
-                                <a href="" class="header-fixed__item-link">Tours</a>
+                                <a href="Tours.jsp" class="header-fixed__item-link">Tours</a>
                             </li>
                             <li class="header-fixed__list-item">
-                                <a href="" class="header-fixed__item-link">Ăn Uống</a>
+                                <a href="/ProjectAssignment/food" class="header-fixed__item-link">Ăn Uống</a>
                             </li>
                             <li class="header-fixed__list-item">
-                                <a href="" class="header-fixed__item-link">About us</a>
+                                <a href="Home.jsp" class="header-fixed__item-link">About us</a>
                             </li>
 
                             <li class="header-fixed__list-item">
-                                <a href="" class="header-fixed__item-link">Contact Us</a>
+                                <a href="Home.jsp" class="header-fixed__item-link">Contact Us</a>
                             </li>
                         </ul>
                         <ul class="header-fixed__search">
