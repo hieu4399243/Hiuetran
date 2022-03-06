@@ -346,7 +346,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">STT</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Price</th>
@@ -372,7 +372,7 @@
                     </div>
                     <div class="col-md-4" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
                         <h3>Information of customer</h3>
-                        <form action="checkout" method="POST">
+                        <form action="order" method="post">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">

@@ -5,7 +5,12 @@
  */
 package control;
 
+import dao.OrderDAO;
+import dao.OrderDetailDAO;
+import dao.ShippingDAO;
 import entity.Cart;
+import entity.Order;
+import entity.Shipping;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedHashMap;
@@ -83,7 +88,52 @@ public class OrderFood extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        String email = request.getParameter("email");
+        String note = request.getParameter("note");
+
+        //lưu vào database
+        //Lưu Shipping
+        Shipping shipping = Shipping.builder()
+                .name(name)
+                .phone(phone)
+                .address(email)
+                .build();
+        int shippingId = new ShippingDAO().createReturnId(shipping); //trả về id tự tăng của bản ghi vừa lưu vào database
+        //Lưu Order
+        HttpSession session = request.getSession();
+        Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
+        if (carts == null) {
+            carts = new LinkedHashMap<>();
+        }
+
+        //tinh tong tien
+        double totalPrice = 0;
+        for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
+            Integer productId = entry.getKey();
+            Cart cart = entry.getValue();
+
+            totalPrice += cart.getQuantity() * cart.getProduct().getPrice();
+
+        }
+
+        Order order = Order.builder()
+                .accountId(1)
+                .totalPrice(shippingId)
+                .totalPrice(totalPrice)
+                .note(note)
+                .shippingId(shippingId)
+                .build();
+        int orderId = new OrderDAO().createReturnId(order);
+        //Lưu OrderDetail
+
+        new OrderDetailDAO().saveCart(orderId, carts);
+
+        session.removeAttribute("carts");
+        response.sendRedirect("thanks");
     }
 
     /**

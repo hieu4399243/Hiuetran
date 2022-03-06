@@ -332,91 +332,18 @@
         </main>
 
 
-
-
-
-        <!-- Product section-->
-        <section class="py-5">
-
-            <div class="container" style="min-height: 1000px">
-                <h1>Checkout</h1>
-                <div class="row">
-                    <div class="col-md-8" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
-                        <h3>List Products</h3>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">STT</th>
-                                    <th scope="col">Image</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Total Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <c:forEach items="${carts}" var="C">
-                                    <tr>
-                                <input type="hidden" name="productId" value="${C.value.product.id}"/>
-                                <th scope="row">${C.value.product.id}</th>
-                                <td>${C.value.product.name}</td>
-                                <td><img src="${C.value.product.imageUrl}" width="50"/></td>
-                                <td>${C.value.product.price}</td>
-                                <td>${C.value.quantity}</td>
-                                <td>${C.value.product.price*C.value.quantity}</td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                        <h3>Total Amount: $${totalMoney}</h3>
-                    </div>
-                    <div class="col-md-4" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
-                        <h3>Information of customer</h3>
-                        <form action="order" method="post">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Phone</label>
-                                <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="note" class="form-label">Note</label>
-                                <textarea class="form-control" id="note" name="note" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
-                        </form>
-                    </div>
+        <div class="container" style="min-height: 1000px">
+            <div class="alert alert-success text-center mt-5" role="alert" >
+                Order successfully, Thank you very much...
+                <div class="text-center mt-2">
+                    <a class="btn btn-outline-primary" href="food">Continue Shopping</a>
                 </div>
             </div>
-        </section>
-        
-       
-        <form>
-            <button type="submit" style="    
-             position: fixed;
-             bottom: 200px;
-             right: 50px;
-             background-color: red;
-             width: 80px;
-             height: 80px;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             border-radius: 50%;
-             color: white;
-             flex-direction: column;">
-               <i class="bi-cart-fill me-1"></i>
-               Bought
-               <span>${sessionScope.carts.size()}</span>
-            </button>
-        </form>
-        
+        </div>
+
+
+
+
         <!-- Footer-->
         <footer class="footer">
             <section class="footer-top">
