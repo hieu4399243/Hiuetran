@@ -429,7 +429,7 @@
                                         <!-- Product actions-->
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                             <div class="text-center">
-                                                <a class="btn btn-outline-dark mt-auto" href="#"
+                                                <a class="btn btn-outline-dark mt-auto" href="add?productId=${P.id}"
                                                    >Đặt món</a
                                                 >
                                             </div>
@@ -445,6 +445,25 @@
             </div>
 
         </section>
+         <div>
+            <a href="carts" style="    
+             position: fixed;
+             bottom: 200px;
+             right: 50px;
+             background-color: red;
+             width: 80px;
+             height: 80px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             border-radius: 50%;
+             color: white;
+             flex-direction: column;">
+               <i class="bi-cart-fill me-1"></i>
+               Bought
+               <span>${sessionScope.carts.size()}</span>
+            </a>
+        </div>
         <!-- Footer-->
         <footer class="footer">
             <section class="footer-top">

@@ -332,121 +332,57 @@
         </main>
 
 
-        <!-- Section-->
-        
-        <form action="search" class=" d-flex mx-auto">
-            
-            <input type="search" id="search" name="keyword" placeholder="Search" style="margin-right: 5px;
-                   margin-left:600px; margin-top: 100px;padding: 7px 30px;
-                   border: 2px solid red;
-                   border-radius: 3px"><br><br>
-            
-            <button class="btn btn-outline-success" type="submit" style="margin-top: 100px">Search</button>
-        </form>
-        
-        
+
+
+
+        <!-- Product section-->
         <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row">
-                    <div class="col-md-3 mb-5">
-                        <h3 style="color:red">Các món ăn được ưa thích</h3>
-                        <ul class="list-group">
-                            <c:forEach items="${sessionScope.listCategories}" var="C">
-                                <li class="list-group-item"><a href="categoryfind?categoryID=${C.id}">${C.name}</a></li>
-
+            <div class="container" style="min-height: 1000px">
+                <c:choose>
+                    <c:when test="${sessionScope.carts==null||sessionScope.carts.size()==0}">
+                        <h1>Không có món ăn nào được đặt</h1>
+                    </c:when>
+                    <c:otherwise>
+                        <h3>Danh Sách Món Ăn</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Tên Món</th>
+                                    <th scope="col">Đơn Gía</th>
+                                    <th scope="col">Số lượng</th>
+                                    <th scope="col">Tổng Gía</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${carts}" var="C">
+                                <form action="update-quantity">
+                                    <tr>
+                                    <input type="hidden" name="productId" value="${C.value.product.id}"/>
+                                        <th scope="row">${C.value.product.id}</th>
+                                        <td>${C.value.product.name}</td>
+                                        <td><img src="${C.value.product.imageUrl}" width="50"/></td>
+                                        <td>${C.value.product.price}</td>
+                                        <td><input onchange="this.form.submit()" type="number" name="quantity" value="${C.value.quantity}"/></td>
+                                        <td>${C.value.product.price*C.value.quantity}</td>
+                                        <td><a href="delete?productId=${C.value.product.id}" class="btn btn-outline-danger"><i class="bi bi-trash"></i>Delete</a></td>
+                                    </tr>
+                                </form>
                             </c:forEach>
-
-
-                        </ul>
-                    </div>
-
-                    <div class="col-md-9">
-                        <h3 style="color: red; text-align: center; font: 20px">Đặt món ngay</h3>
-                        <c:choose>
-                            <c:when test="${listProducts==null || listProducts.size()==0}">
-                                Not founds
-                            </c:when>
-                            <c:otherwise>
-                                <nav aria-label="Page navigation example" class="d-flex justify-content-center">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="food?page=${page-1}">Previous</a></li>
-                                            <c:forEach begin="1" end="${totalPage}" var="i">
-                                            <li class="page-item ${i == page?"active":""}"><a class="page-link" href="food?page=${i}">${i}</a></li>
-                                            </c:forEach>
-                                        <li class="page-item"><a class="page-link" href="food?page=${page+1}">Next</a></li>
-                                    </ul>
-                                </nav>
-                            </c:otherwise>
-                        </c:choose>
-
-                        <br><br>
-                        <div
-                            class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 justify-content-center"
-                            >
-                            <c:forEach items="${listProducts}" var="P">
-
-
-                                <div class="col mb-5">
-
-                                    <div class="card h-100">
-                                        <!-- Sale badge-->
-                                        <div
-                                            class="badge bg-dark text-white position-absolute"
-                                            style="top: 0.5rem; right: 0.5rem"
-                                            >
-                                            Sale
-                                        </div>
-                                        <!-- Product image-->
-                                        <a href="detail?productId=${P.id}">
-                                        <img
-                                            class="card-img-top"
-                                            src="${P.imageUrl}"
-                                            alt="..."
-                                            />
-                                        </a>
-                                        <!-- Product details-->
-                                        <div class="card-body p-4">
-                                            <div class="text-center">
-                                                <!-- Product name-->
-                                                <h5 class="fw-bolder">${P.name}</h5>
-                                                <!-- Product reviews-->
-                                                <div
-                                                    class="d-flex justify-content-center small text-warning mb-2"
-                                                    >
-                                                    <div class="bi-star-fill"></div>
-                                                    <div class="bi-star-fill"></div>
-                                                    <div class="bi-star-fill"></div>
-                                                    <div class="bi-star-fill"></div>
-                                                    <div class="bi-star-fill"></div>
-                                                </div>
-                                                <!-- Product price-->
-                                                <span class="text-muted text-decoration-line-through"
-                                                      >$20.00</span
-                                                >
-                                                $${P.price}
-                                            </div>
-                                        </div>
-                                        <!-- Product actions-->
-                                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                            <div class="text-center">
-                                                <a class="btn btn-outline-dark mt-auto" href="add?productId=${P.id}"
-                                                   >Đặt món</a
-                                                >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </c:forEach>
-
-                        </div>
-
-                    </div>
-                </div>
+                            </tbody>
+                        </table>
+                        <h3>Total Amount: $${totalMoney}</h3>
+                        <a href="checkout" class="btn btn-success w-25">Check out</a>
+                    </c:otherwise>
+                </c:choose>
             </div>
-
         </section>
-         <div>
-            <a href="carts" style="    
+        
+       
+        <form>
+            <button type="submit" style="    
              position: fixed;
              bottom: 200px;
              right: 50px;
@@ -462,8 +398,9 @@
                <i class="bi-cart-fill me-1"></i>
                Bought
                <span>${sessionScope.carts.size()}</span>
-            </a>
-        </div>
+            </button>
+        </form>
+        
         <!-- Footer-->
         <footer class="footer">
             <section class="footer-top">

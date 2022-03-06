@@ -5,13 +5,13 @@
  */
 package control;
 
-import dao.CategoryDAO;
-import dao.ProductDAO;
-import entity.Category;
-import entity.Product;
+import entity.Cart;
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,35 +21,41 @@ import javax.servlet.http.HttpSession;
  *
  * @author Admin
  */
-public class FoodController extends HttpServlet {
+@WebServlet(name = "Bought", urlPatterns = {"/carts"})
+public class Bought extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        final int PAGE_SIZE=6;
-        List<Category> listCategories = new CategoryDAO().getAllCategories();
-        HttpSession session = request.getSession();
-        session.setAttribute("listCategories", listCategories);
-        
-        int page=1;
-        String pageStr=request.getParameter("page");
-        if(pageStr!=null){
-            page = Integer.parseInt(pageStr);
+        try (PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession();
+            Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
+            if(carts==null){
+                carts = new LinkedHashMap<>();
+            }
+            
+            //tinh tong tien
+            double totalMoney = 0;
+            for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
+                Integer productId = entry.getKey();
+                Cart cart = entry.getValue();
+                
+                totalMoney += cart.getQuantity() * cart.getProduct().getPrice();
+                
+            }
+            request.setAttribute("totalMoney", totalMoney);
+            request.setAttribute("carts", carts);
+            request.getRequestDispatcher("Bought.jsp").forward(request, response);
         }
-        ProductDAO productDAO = new ProductDAO();
-        List<Product> listProducts = productDAO.getAllProducts();
-        
-        int totalProducts = productDAO.getTotalProducts();
-        int totalPage = totalProducts / PAGE_SIZE;
-        if (totalProducts % PAGE_SIZE != 0) {
-            totalPage += 1;
-        }
-        
-        request.setAttribute("page", page);
-        request.setAttribute("totalPage", totalPage);
-        session.setAttribute("UrlHistory", "food");
-        request.setAttribute("listProducts", listProducts.subList((page-1)*PAGE_SIZE,page*PAGE_SIZE));
-        request.getRequestDispatcher("Food.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

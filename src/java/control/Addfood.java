@@ -56,7 +56,11 @@ public class Addfood extends HttpServlet {
             //lưu carts lên session
             session.setAttribute("carts", carts);
            
-            response.sendRedirect("detail?productId="+productId);
+            String urlHistory = (String) session.getAttribute("urlHistory");
+            if (urlHistory == null) {
+                urlHistory = "food";
+            }
+            response.sendRedirect(urlHistory);
         }
     }
 

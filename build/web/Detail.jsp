@@ -55,7 +55,7 @@
                                 <a href="Tours.jsp" class="header-unfixed__item-link">Tours</a>
                             </li>   
                             <li class="header-unfixed__list-item">
-                                <a href="Food.jsp" class="header-unfixed__item-link">Ăn uống</a>
+                                <a href="/ProjectAssignment/food" class="header-unfixed__item-link">Ăn uống</a>
                             </li>
                             <li class="header-unfixed__list-item">
                                 <a href="Home.jsp" class="header-unfixed__item-link">About us</a>
