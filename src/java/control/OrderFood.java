@@ -21,8 +21,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Admin
  */
-@WebServlet(name = "Bought", urlPatterns = {"/carts"})
-public class Bought extends HttpServlet {
+@WebServlet(name = "OrderFood", urlPatterns = {"/order"})
+public class OrderFood extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,22 +39,21 @@ public class Bought extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             HttpSession session = request.getSession();
             Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
-            if(carts==null){
+            if (carts == null) {
                 carts = new LinkedHashMap<>();
             }
-            
+
             //tinh tong tien
             double totalMoney = 0;
             for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
-                Integer productId = entry.getKey();// key
-                Cart cart = entry.getValue();// sản phầm
-                
-                totalMoney += cart.getQuantity() * cart.getProduct().getPrice();// giá nhân số lượng
-                
+                Integer productId = entry.getKey();
+                Cart cart = entry.getValue();
+
+                totalMoney += cart.getQuantity() * cart.getProduct().getPrice();
+
             }
             request.setAttribute("totalMoney", totalMoney);
-            request.setAttribute("carts", carts);
-            request.getRequestDispatcher("Bought.jsp").forward(request, response);
+            request.getRequestDispatcher("CheckFoodBought.jsp").forward(request, response);
         }
     }
 

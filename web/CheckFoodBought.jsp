@@ -337,46 +337,62 @@
 
         <!-- Product section-->
         <section class="py-5">
+
             <div class="container" style="min-height: 1000px">
-                <c:choose>
-                    <c:when test="${sessionScope.carts==null||sessionScope.carts.size()==0}">
-                        <h1>Không có món ăn nào được đặt</h1>
-                    </c:when>
-                    <c:otherwise>
-                        <h3>Danh Sách Món Ăn</h3>
+                <h1>Checkout</h1>
+                <div class="row">
+                    <div class="col-md-8" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
+                        <h3>List Products</h3>
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">STT</th>
+                                    <th scope="col">#</th>
                                     <th scope="col">Image</th>
-                                    <th scope="col">Tên Món</th>
-                                    <th scope="col">Đơn Gía</th>
-                                    <th scope="col">Số lượng</th>
-                                    <th scope="col">Tổng Gía</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total Price</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <c:forEach items="${carts}" var="C">
-                                <form action="update-quantity">
                                     <tr>
-                                    <input type="hidden" name="productId" value="${C.value.product.id}"/>
-                                        <th scope="row">${C.value.product.id}</th>
-                                        <td>${C.value.product.name}</td>
-                                        <td><img src="${C.value.product.imageUrl}" width="50"/></td>
-                                        <td>${C.value.product.price}</td>
-                                        <td><input onchange="this.form.submit()" type="number" name="quantity" value="${C.value.quantity}"/></td>
-                                        <td>${C.value.product.price*C.value.quantity}</td>
-                                        <td><a href="delete?productId=${C.value.product.id}" class="btn btn-outline-danger"><i class="bi bi-trash"></i>Delete</a></td>
-                                    </tr>
-                                </form>
+                                <input type="hidden" name="productId" value="${C.value.product.id}"/>
+                                <th scope="row">${C.value.product.id}</th>
+                                <td>${C.value.product.name}</td>
+                                <td><img src="${C.value.product.imageUrl}" width="50"/></td>
+                                <td>${C.value.product.price}</td>
+                                <td>${C.value.quantity}</td>
+                                <td>${C.value.product.price*C.value.quantity}</td>
+                                </tr>
                             </c:forEach>
                             </tbody>
                         </table>
                         <h3>Total Amount: $${totalMoney}</h3>
-                        <a href="order" class="btn btn-success w-25">Đặt Món</a>
-                    </c:otherwise>
-                </c:choose>
+                    </div>
+                    <div class="col-md-4" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
+                        <h3>Information of customer</h3>
+                        <form action="checkout" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="note" class="form-label">Note</label>
+                                <textarea class="form-control" id="note" name="note" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
         

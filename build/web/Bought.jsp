@@ -374,7 +374,7 @@
                             </tbody>
                         </table>
                         <h3>Total Amount: $${totalMoney}</h3>
-                        <a href="checkout" class="btn btn-success w-25">Check out</a>
+                        <a href="order" class="btn btn-success w-25">Đặt Món</a>
                     </c:otherwise>
                 </c:choose>
             </div>

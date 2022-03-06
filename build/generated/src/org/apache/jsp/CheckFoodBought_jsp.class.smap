@@ -1,0 +1,19 @@
+SMAP
+CheckFoodBought_jsp.java
+JSP
+*S JSP
+*F
++ 0 CheckFoodBought.jsp
+CheckFoodBought.jsp
+*L
+5,354:54
+358:783,11
+359:794
+360,7:795,3
+367,2:816
+368,3:410
+371:413,3
+372,44:416
+416:460,3
+417,302:463
+*E

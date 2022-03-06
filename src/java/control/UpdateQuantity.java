@@ -21,8 +21,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Admin
  */
-@WebServlet(name = "Bought", urlPatterns = {"/carts"})
-public class Bought extends HttpServlet {
+@WebServlet(name = "UpdateQuantity", urlPatterns = {"/update-quantity"})
+public class UpdateQuantity extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,24 +37,22 @@ public class Bought extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            int productId = Integer.parseInt(request.getParameter("productId"));
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+
             HttpSession session = request.getSession();
             Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
-            if(carts==null){
+            if (carts == null) {
                 carts = new LinkedHashMap<>();
             }
             
-            //tinh tong tien
-            double totalMoney = 0;
-            for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
-                Integer productId = entry.getKey();// key
-                Cart cart = entry.getValue();// sản phầm
-                
-                totalMoney += cart.getQuantity() * cart.getProduct().getPrice();// giá nhân số lượng
-                
+            if(carts.containsKey(productId)){
+                carts.get(productId).setQuantity(quantity);
             }
-            request.setAttribute("totalMoney", totalMoney);
-            request.setAttribute("carts", carts);
-            request.getRequestDispatcher("Bought.jsp").forward(request, response);
+            
+            session.setAttribute("carts", carts);
+            response.sendRedirect("carts");
         }
     }
 
