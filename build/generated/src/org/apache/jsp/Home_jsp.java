@@ -86,11 +86,14 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <a href=\"/ProjectAssignment/food\" class=\"header-unfixed__item-link\">ăn uống</a>\n");
       out.write("                            </li>\n");
       out.write("                            <li class=\"header-unfixed__list-item\">\n");
-      out.write("                                <a href=\"\" class=\"header-unfixed__item-link\">About us</a>\n");
+      out.write("                                <a href=\"Home.jsp\" class=\"header-unfixed__item-link\">About us</a>\n");
       out.write("                            </li>\n");
       out.write("\n");
       out.write("                            <li class=\"header-unfixed__list-item\">\n");
-      out.write("                                <a href=\"\" class=\"header-unfixed__item-link\">Contact Us</a>\n");
+      out.write("                                <a href=\"Home.jsp\" class=\"header-unfixed__item-link\">Contact Us</a>\n");
+      out.write("                            </li>\n");
+      out.write("                            <li class=\"header-unfixed__list-item\">\n");
+      out.write("                                <a href=\"Sign.jsp\" class=\"header-unfixed__item-link\">Đăng Ký</a>\n");
       out.write("                            </li>\n");
       out.write("                        </ul>\n");
       out.write("                        <ul class=\"header-unfixed__search\">\n");
@@ -134,6 +137,9 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("                            <li class=\"header-fixed__list-item\">\n");
       out.write("                                <a href=\"Home.jsp\" class=\"header-fixed__item-link\">Contact Us</a>\n");
+      out.write("                            </li>\n");
+      out.write("                            <li class=\"header-unfixed__list-item\">\n");
+      out.write("                                <a href=\"Sign.jsp\" class=\"header-unfixed__item-link\">Đăng Ký</a>\n");
       out.write("                            </li>\n");
       out.write("                        </ul>\n");
       out.write("                        <ul class=\"header-fixed__search\">\n");

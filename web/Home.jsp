@@ -43,11 +43,14 @@
                                 <a href="/ProjectAssignment/food" class="header-unfixed__item-link">ăn uống</a>
                             </li>
                             <li class="header-unfixed__list-item">
-                                <a href="" class="header-unfixed__item-link">About us</a>
+                                <a href="Home.jsp" class="header-unfixed__item-link">About us</a>
                             </li>
 
                             <li class="header-unfixed__list-item">
-                                <a href="" class="header-unfixed__item-link">Contact Us</a>
+                                <a href="Home.jsp" class="header-unfixed__item-link">Contact Us</a>
+                            </li>
+                            <li class="header-unfixed__list-item">
+                                <a href="Sign.jsp" class="header-unfixed__item-link">Đăng Ký</a>
                             </li>
                         </ul>
                         <ul class="header-unfixed__search">
@@ -91,6 +94,9 @@
 
                             <li class="header-fixed__list-item">
                                 <a href="Home.jsp" class="header-fixed__item-link">Contact Us</a>
+                            </li>
+                            <li class="header-unfixed__list-item">
+                                <a href="Sign.jsp" class="header-unfixed__item-link">Đăng Ký</a>
                             </li>
                         </ul>
                         <ul class="header-fixed__search">
