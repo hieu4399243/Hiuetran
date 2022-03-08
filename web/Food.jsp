@@ -35,39 +35,81 @@
 
     </head>
     <body>
-         <%@include file="components/header.jsp" %>
+        <%@include file="components/header.jsp" %>
 
 
         <!-- Section-->
-        
-        <form action="search" class=" d-flex mx-auto">
-            
-            <input type="search" id="search" name="keyword" placeholder="Search" style="margin-right: 5px;
-                   margin-left:600px; margin-top: 100px;padding: 7px 30px;
-                   border: 2px solid red;
-                   border-radius: 3px"><br><br>
-            
-            <button class="btn btn-outline-success" type="submit" style="margin-top: 100px">Search</button>
+
+        <form action="search" class=" d-flex mx-auto" style="
+              background-color: yellowgreen;
+              
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 100%;
+              height: 200px;
+              position: absolute;
+              ">
+
+
+
+              <input type="search" id="search" name="keyword" placeholder="Nhập món ăn cần tìm" 
+               style="
+               position: relative;
+               margin-right: 5px;
+               margin-left:600px; 
+               margin-top: 50px;
+               margin-bottom: 50px;
+               padding: 0px 120px;
+               
+               border: 2px solid red;
+               border-radius: 3px">
+            <br><br>
+
+            <button class="btn btn-outline-success" type="submit" style="
+                    margin-top: 50px;
+                    margin-bottom: 50px">Search</button>
         </form>
-        
-        
+
+
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row">
                     <div class="col-md-3 mb-5">
-                        <h3 style="color:red">Các món ăn được ưa thích</h3>
-                        <ul class="list-group">
+                        <h3 style="
+                            color:red;
+                            font-size: 20px;
+                            margin-top: 200px;
+                            font-weight: bold;
+                            
+                            ">Lựa chọn bữa trưa theo</h3>
+                        <ul class="list-group" style="
+                            margin-top: 40px;
+                            border: 2px solid yellow;
+                            background-color: coral">
                             <c:forEach items="${sessionScope.listCategories}" var="C">
-                                <li class="list-group-item"><a href="categoryfind?categoryID=${C.id}">${C.name}</a></li>
+                                <li class="list-group-item" style="
+                                    background-color: chartreuse;
+                                    font-size: 15px;
+                                    font-weight: bold"><a href="categoryfind?categoryID=${C.id}">${C.name}</a></li>
 
                             </c:forEach>
 
 
                         </ul>
+                        <img src="img/food/Poster-quang-cao-do-an-hap-dan-04.jpg" alt="" style="
+                             width: 95%;
+                             height: 550px;
+                             margin-top: 50px"/>
                     </div>
 
                     <div class="col-md-9">
-                        <h3 style="color: red; text-align: center; font: 20px">Đặt món ngay</h3>
+                        <h3 style="
+                            color: red;
+                            text-align: center; 
+                            margin-top: 150px;
+                            font-weight: bold;
+                            font-size: 50px
+                            ">Đặt món ngay</h3>
                         <c:choose>
                             <c:when test="${listProducts==null || listProducts.size()==0}">
                                 Not founds
@@ -96,19 +138,14 @@
 
                                     <div class="card h-100">
                                         <!-- Sale badge-->
-                                        <div
-                                            class="badge bg-dark text-white position-absolute"
-                                            style="top: 0.5rem; right: 0.5rem"
-                                            >
-                                            Sale
-                                        </div>
+                                        
                                         <!-- Product image-->
                                         <a href="detail?productId=${P.id}">
-                                        <img
-                                            class="card-img-top"
-                                            src="img/food/${P.imageUrl}"
-                                            alt="..."
-                                            />
+                                            <img
+                                                class="card-img-top"
+                                                src="img/food/${P.imageUrl}"
+                                                alt="..."
+                                                />
                                         </a>
                                         <!-- Product details-->
                                         <div class="card-body p-4">
@@ -129,13 +166,13 @@
                                                 <span class="text-muted text-decoration-line-through"
                                                       >$20.00</span
                                                 >
-                                                $${P.price}
+                                                ${P.price}
                                             </div>
                                         </div>
                                         <!-- Product actions-->
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                             <div class="text-center">
-                                                <a class="btn btn-outline-dark mt-auto" href="add?productId=${P.id}"
+                                                <a class="btn btn-outline-warning" href="add?productId=${P.id}"
                                                    >Đặt món</a
                                                 >
                                             </div>
@@ -151,25 +188,25 @@
             </div>
 
         </section>
-         <div>
+        <div>
             <a href="carts" style="    
-             position: fixed;
-             bottom: 200px;
-             right: 50px;
-             background-color: red;
-             width: 80px;
-             height: 80px;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             border-radius: 50%;
-             color: white;
-             flex-direction: column;">
-               <i class="bi-cart-fill me-1"></i>
-               Bought
-               <span>${sessionScope.carts.size()}</span>
+               position: fixed;
+               bottom: 200px;
+               right: 50px;
+               background-color: red;
+               width: 80px;
+               height: 80px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               border-radius: 50%;
+               color: white;
+               flex-direction: column;">
+                <i class="bi-cart-fill me-1"></i>
+                Bought
+                <span>${sessionScope.carts.size()}</span>
             </a>
         </div>
-         <%@include file="components/footer.jsp" %>
+        <%@include file="components/footer.jsp" %>
     </body>
 </html>
