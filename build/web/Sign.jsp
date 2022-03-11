@@ -33,12 +33,12 @@
                         <h2>Login Form</h2>
                         <form action="login" method="post">
                             <div class="inputBox">
-                                <input type="text" placeholder="Username" name="user">
+                                <input type="text" placeholder="Username" name="user"> 
                             </div>
                             <div class="inputBox">
                                 <input type="password" placeholder="password" name="pass">
                             </div>
-                            <div class="form-group form-check">
+                            <div class="inputBox">
                                 <input name="remember" value="1" type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Remember me</label>
                             </div>

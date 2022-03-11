@@ -6,9 +6,15 @@
 package dao;
 
 import context.DBcontext;
+import entity.Category;
 import entity.Contact;
+import entity.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,31 +22,29 @@ import java.sql.PreparedStatement;
  */
 public class ContactDAO {
 
-    public boolean saveContact(Contact contact) {
-        boolean f = false;
-
+    public Contact login(String user, String pass) {
+        String query = "select * from account\n"
+                + "where [username]=? and [password]=?";
         try {
+            Connection conn = new DBcontext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, user);
+            ps.setString(2, pass);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Contact contact = Contact.builder()
+                        .id(rs.getInt(1))
+                        .username(rs.getString(2))
+                        .password(rs.getString(3))
+                        .isSell(rs.getInt(4))
+                        .isAdmin(rs.getInt(5)).build();
+                return contact;
 
-            String query = "INSERT INTO dbo.Account VALUES(?, ?, ?, ?, ?, ?, ?)";
-            Connection con = new DBcontext().getConnection();
-            PreparedStatement pstmt = con.prepareStatement(query);
-
-            
-            pstmt.setInt(1, contact.getId());
-            pstmt.setString(2, contact.getUsername());
-            pstmt.setString(3, contact.getPassword());
-            pstmt.setString(4, contact.getDisplayName());
-            pstmt.setString(5, contact.getAddress());
-            pstmt.setString(6, contact.getEmail());
-            pstmt.setString(7, contact.getPhone());
-
-            pstmt.executeUpdate();
-            f = true;
-
-        } catch (Exception e) {
-            e.printStackTrace();
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return f;
+        return null;
     }
 
 }

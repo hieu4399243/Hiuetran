@@ -77,7 +77,7 @@ public final class Sign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <div class=\"inputBox\">\n");
       out.write("                                <input type=\"password\" placeholder=\"password\" name=\"pass\">\n");
       out.write("                            </div>\n");
-      out.write("                            <div class=\"form-group form-check\">\n");
+      out.write("                            <div class=\"inputBox\">\n");
       out.write("                                <input name=\"remember\" value=\"1\" type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\">\n");
       out.write("                                <label class=\"form-check-label\" for=\"exampleCheck1\">Remember me</label>\n");
       out.write("                            </div>\n");
