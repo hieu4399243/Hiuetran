@@ -198,19 +198,20 @@
 
                         </div>
                         <span class="chat-form__introduction chat-form-animation">Hãy điền thông tin của bạn tại ở phần bên dưới: </span>
-                        <form action="" class="chat-form__form chat-form-animation">
+                        <form action="contact" class="chat-form__form chat-form-animation">
                             <div class="form-input-group">
-                                <input type="text" placeholder="First Name" class="form-input form-input--first-name">
-                                <input type="text" placeholder="Last Name" class="form-input form-input--last-name">
+                                <input type="text" placeholder="User Name" name="uname" class="form-input form-input--first-name">
+                                <input type="password" placeholder="Password " name="upass" class="form-input form-input--first-name">
+                                <input type="text" placeholder="Your Full Name" name="ufulname" class="form-input form-input--last-name">
                             </div>
                             <div class="form-input-group">
-                                <input type="email" placeholder="Email" class="form-input form-email">
+                                <input type="email" name="email" placeholder="Email" class="form-input form-email">
                             </div>
                             <div class="form-input-group form-input-group--dark-text">
                                 <input id="phone" class="form-input form-input--phone" name="phone" type="tel" autocomplete="off" data-intl-tel-input-id="0" placeholder="Phone">
                             </div>
                             <div class="form-input-group">
-                                <textarea name="" id="" class="form-input form-input--message" cols="30" rows="10" placeholder="Where do you like to go?"></textarea>
+                                <textarea name="address" id="" class="form-input form-input--message" cols="30" rows="10" placeholder="Your address!"></textarea>
                             </div>
                             <div class="form-input-group">
                                 <input id="form-input-agreement" type="checkbox" class="form-input--agree">
@@ -223,9 +224,7 @@
                                 </div>
                             </div>
                             <div class="form-input--submit">
-                                <buttom href="" class="btn form-btn-submit">
-                                    Đăng Ký
-                                </buttom>
+                                <input type="submit" class="btn form-btn-submit" value=" Đăng Ký" />
                             </div>
                         </form>
                     </div>

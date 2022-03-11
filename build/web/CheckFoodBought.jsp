@@ -46,39 +46,40 @@
 
             <div class="container" style="min-height: 1000px">
                 <h1>Checkout</h1>
-                <div class="row">
-                    <div class="col-md-8" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
-                        <h3>List Products</h3>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">STT</th>
-                                    <th scope="col">Image</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Total Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <c:forEach items="${carts}" var="C">
+                <form action="order" method="post">
+                    <div class="row">
+                        <div class="col-md-8" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
+                            <h3>List Products</h3>
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                <input type="hidden" name="productId" value="${C.value.product.id}"/>
-                                <th scope="row">${C.value.product.id}</th>
-                                <td>${C.value.product.name}</td>
-                                <td><img src="img/food/${C.value.product.imageUrl}" width="50"/></td>
-                                <td>${C.value.product.price}</td>
-                                <td>${C.value.quantity}</td>
-                                <td>${C.value.product.price*C.value.quantity}</td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                        <h3>Total Amount: $${totalMoney}</h3>
-                    </div>
-                    <div class="col-md-4" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
-                        <h3>Information of customer</h3>
-                        <form action="order" method="post">
+                                        <th scope="col">STT</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${carts}" var="C">
+                                        <tr>
+                                    <input type="hidden" name="productId" value="${C.value.product.id}"/>
+                                    <th scope="row">${C.value.product.id}</th>
+                                    <td><img name="img" value="${C.value.product.imageUrl}" src="img/food/${C.value.product.imageUrl}" width="50"/></td>
+                                    <td><input readonly name="pname" value="${C.value.product.name}" /></td>
+                                    <td><input readonly name="" value="${C.value.product.price}" /></td>
+                                    <td><input readonly name="quantity" value="${C.value.quantity}" /></td>
+                                    <td><input readonly name="price" value="${C.value.product.price*C.value.quantity}" ></td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                            <h3>Total Amount: $${totalMoney}</h3>
+                        </div>
+                        <div class="col-md-4" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
+                            <h3>Information of customer</h3>
+
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
@@ -96,9 +97,10 @@
                                 <textarea class="form-control" id="note" name="note" rows="3"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Submit</button>
-                        </form>
+
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
 

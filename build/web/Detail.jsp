@@ -176,7 +176,7 @@
         </section>
 
         <form>
-            <button type="submit" style="    
+            <a href="carts" type="submit" style="    
                     position: fixed;
                     bottom: 200px;
                     right: 50px;
@@ -192,7 +192,7 @@
                 <i class="bi-cart-fill me-1"></i>
                 Bought
                 <span>${sessionScope.carts.size()}</span>
-            </button>
+            </a>
         </form>
 
         <%@include file="components/footer.jsp" %>

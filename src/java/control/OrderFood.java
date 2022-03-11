@@ -10,6 +10,7 @@ import dao.OrderDetailDAO;
 import dao.ShippingDAO;
 import entity.Cart;
 import entity.Order;
+import entity.Product;
 import entity.Shipping;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -94,6 +95,14 @@ public class OrderFood extends HttpServlet {
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
         String note = request.getParameter("note");
+        
+        int oid = Integer.parseInt(request.getParameter("productId"));
+        String img = request.getParameter("img");
+        String pname = request.getParameter("pname");
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        double price = Double.parseDouble(request.getParameter("price"));
+        //Bay h ong add cai product nay giong cai builder duoi di lam y chang cai ben duoi la dc // khong build lai dc 
+        //Product p = Product.builder().id(oid).name(name).quantity(quantity).price(price).imageUrl(img);
 
         //lưu vào database
         //Lưu Shipping
