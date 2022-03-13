@@ -21,9 +21,5 @@ public class Contact {
     private String password;
     private int isSell;
     private int isAdmin;
+    private String displayName;
 }
-    
-
-
-
-

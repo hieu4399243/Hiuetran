@@ -7,6 +7,7 @@ package control;
 
 import dao.ProductDAO;
 import entity.Cart;
+import entity.Contact;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,6 +42,7 @@ public class Addfood extends HttpServlet {
             int productId = Integer.parseInt(request.getParameter("productId"));
             //map    productId | cart
             HttpSession session = request.getSession();
+            
             Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
             if (carts == null) {
                 carts = new LinkedHashMap<>();

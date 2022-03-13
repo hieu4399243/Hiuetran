@@ -69,7 +69,7 @@
                                     <input type="hidden" name="productId" value="${C.value.product.id}"/>
                                     <th scope="row">${C.value.product.id}</th>
                                     <td>${C.value.product.name}</td>
-                                    <td><img src="img/food/${C.value.product.imageUrl}" width="50"/></td>
+                                    <td><img src="img/food/${C.value.product.imageUrl}" width="100"/></td>
                                     <td>${C.value.product.price}</td>
                                     <td><input onchange="this.form.submit()" type="number" name="quantity" value="${C.value.quantity}"/></td>
                                     <td>${C.value.product.price*C.value.quantity}</td>

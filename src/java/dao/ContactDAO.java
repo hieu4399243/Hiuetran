@@ -6,13 +6,10 @@
 package dao;
 
 import context.DBcontext;
-import entity.Category;
 import entity.Contact;
-import entity.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -37,7 +34,8 @@ public class ContactDAO {
                         .username(rs.getString(2))
                         .password(rs.getString(3))
                         .isSell(rs.getInt(4))
-                        .isAdmin(rs.getInt(5)).build();
+                        .isAdmin(rs.getInt(5))
+                        .displayName(rs.getString(6)).build();
                 return contact;
 
             }
@@ -46,5 +44,4 @@ public class ContactDAO {
         }
         return null;
     }
-
 }

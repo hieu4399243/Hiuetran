@@ -44,7 +44,7 @@
                                 <a href="Home.jsp" class="header-unfixed__item-link">Trang chủ</a>
                             </li>
                             <li class="header-unfixed__list-item">
-                                <a href="Tours.jsp" class="header-unfixed__item-link">Tours</a>
+                                <a href="/ProjectAssignment/tours" class="header-unfixed__item-link">Tours</a>
                             </li>   
                             <li class="header-unfixed__list-item">
                                 <a href="/ProjectAssignment/food" class="header-unfixed__item-link">Ăn uống</a>
@@ -87,7 +87,7 @@
 
                             </li>
                             <li class="header-fixed__list-item">
-                                <a href="Tours.jsp" class="header-fixed__item-link">Tours</a>
+                                <a href="/ProjectAssignment/tours" class="header-fixed__item-link">Tours</a>
                             </li>
                             <li class="header-fixed__list-item">
                                 <a href="/ProjectAssignment/food" class="header-fixed__item-link">Ăn uống</a>

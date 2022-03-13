@@ -1,5 +1,5 @@
 
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -50,7 +50,15 @@
                                 <a href="Home.jsp" class="header-unfixed__item-link">Contact Us</a>
                             </li>
                             <li class="header-unfixed__list-item">
-                                <a href="Sign.jsp" class="header-unfixed__item-link">Đăng Ký</a>
+                                <c:choose>
+                                    <c:when test="${sessionScope.contact != null}">
+                                        <button class="header-unfixed__item-link" style="background-color:greenyellow;border-radius: 5px; margin-right: 10px">${sessionScope.contact.displayName}</button>
+                                        <a href="logout" class="header-unfixed__item-link" >Đăng xuất</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="Sign.jsp" class="header-unfixed__item-link">Đăng Ký</a>
+                                    </c:otherwise>
+                                </c:choose>
                             </li>
                         </ul>
                         <ul class="header-unfixed__search">

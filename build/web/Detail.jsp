@@ -16,7 +16,7 @@
             />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Gọi và đặt món - Du Lịch  </title>
+        <title>Đặt Món</title>
 
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
@@ -47,7 +47,7 @@
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="img/food/${product.imageUrl}" alt="..." /></div>
                     <div class="col-md-6">
-                        <div class="small mb-1">SKU: BST-498</div>
+                        
                         <h1 class="display-5 fw-bolder">${product.name}</h1>
                         <div class="fs-5 mb-5">
                             <span class="text-decoration-line-through">$45.00</span>

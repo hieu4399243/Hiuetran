@@ -20,6 +20,18 @@
         <servlet-name>ContactServlet</servlet-name>
         <servlet-class>control.ContactServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetailControllerTours</servlet-name>
+        <servlet-class>control.DetailControllerTours</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>control.LoginController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginContro</servlet-name>
+        <servlet-class>control.LoginContro</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FoodController</servlet-name>
         <url-pattern>/food</url-pattern>
@@ -40,6 +52,12 @@
         <servlet-name>ContactServlet</servlet-name>
         <url-pattern>/contact</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailControllerTours</servlet-name>
+        <url-pattern>/detailtours</url-pattern>
+    </servlet-mapping>
+ 
+
     <session-config>
         <session-timeout>
             30

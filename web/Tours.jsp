@@ -16,7 +16,7 @@
             />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Gọi và đặt món - Du Lịch  </title>
+        <title>Đặt Tours - Du Lịch  </title>
 
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
@@ -40,7 +40,7 @@
 
         <!-- Section-->
 
-        <form action="search" class=" d-flex mx-auto" style="
+        <form action="searchtours" class=" d-flex mx-auto" style="
               background-color: yellowgreen;
               
               background-size: cover;
@@ -52,7 +52,7 @@
 
 
 
-              <input type="search" id="search" name="keyword" placeholder="Nhập món ăn cần tìm" 
+              <input type="searchtours" id="search" name="keyword" placeholder="Nhập tours cần tìm" 
                style="
                position: relative;
                margin-right: 5px;
@@ -81,22 +81,22 @@
                             margin-top: 200px;
                             font-weight: bold;
                             
-                            ">Lựa chọn bữa trưa theo</h3>
+                            ">Lựa chọn Tours Du Lịch</h3>
                         <ul class="list-group" style="
                             margin-top: 40px;
                             border: 2px solid yellow;
                             background-color: coral">
-                            <c:forEach items="${sessionScope.listCategories}" var="C">
+                            <c:forEach items="${sessionScope.listCategoriesTours}" var="C">
                                 <li class="list-group-item" style="
                                     background-color: chartreuse;
                                     font-size: 15px;
-                                    font-weight: bold"><a href="categoryfind?categoryID=${C.id}">${C.name}</a></li>
+                                    font-weight: bold"><a href="toursfind?categorytoursID=${C.id}">${C.name}</a></li>
 
                             </c:forEach>
 
 
                         </ul>
-                        <img src="img/food/Poster-quang-cao-do-an-hap-dan-04.jpg" alt="" style="
+                        <img src="img/tours/poter.jpg" alt="" style="
                              width: 95%;
                              height: 550px;
                              margin-top: 50px"/>
@@ -109,19 +109,19 @@
                             margin-top: 150px;
                             font-weight: bold;
                             font-size: 50px
-                            ">Đặt món ngay</h3>
+                            ">Đặt Tours</h3>
                         <c:choose>
-                            <c:when test="${listProducts==null || listProducts.size()==0}">
+                            <c:when test="${listTours==null || listTours.size()==0}">
                                 Not founds
                             </c:when>
                             <c:otherwise>
                                 <nav aria-label="Page navigation example" class="d-flex justify-content-center">
                                     <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="food?page=${page-1}">Previous</a></li>
+                                        <li class="page-item"><a class="page-link" href="tours?page=${page-1}">Previous</a></li>
                                             <c:forEach begin="1" end="${totalPage}" var="i">
-                                            <li class="page-item ${i == page?"active":""}"><a class="page-link" href="food?page=${i}">${i}</a></li>
+                                            <li class="page-item ${i == page?"active":""}"><a class="page-link" href="tours?page=${i}">${i}</a></li>
                                             </c:forEach>
-                                        <li class="page-item"><a class="page-link" href="food?page=${page+1}">Next</a></li>
+                                        <li class="page-item"><a class="page-link" href="tours?page=${page+1}">Next</a></li>
                                     </ul>
                                 </nav>
                             </c:otherwise>
@@ -131,7 +131,7 @@
                         <div
                             class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 justify-content-center"
                             >
-                            <c:forEach items="${listProducts}" var="P">
+                            <c:forEach items="${listTours}" var="P">
 
 
                                 <div class="col mb-5">
@@ -140,10 +140,10 @@
                                         <!-- Sale badge-->
                                         
                                         <!-- Product image-->
-                                        <a href="detail?productId=${P.id}">
+                                        <a href="detailtours?toursId=${P.id}">
                                             <img
                                                 class="card-img-top"
-                                                src="img/food/${P.imageUrl}"
+                                                src="img/tours/${P.imageUrl}"
                                                 alt="..."
                                                 />
                                         </a>
@@ -164,7 +164,7 @@
                                                 </div>
                                                 <!-- Product price-->
                                                 <span class="text-muted text-decoration-line-through"
-                                                      >$20.00</span
+                                                      >$50.000</span
                                                 >
                                                 ${P.price}
                                             </div>
@@ -172,8 +172,8 @@
                                         <!-- Product actions-->
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                             <div class="text-center">
-                                                <a class="btn btn-outline-warning" href="add?productId=${P.id}"
-                                                   >Đặt món</a
+                                                <a class="btn btn-outline-warning" href="addtours?toursId=${P.id}"
+                                                   >Đặt Tour</a
                                                 >
                                             </div>
                                         </div>
@@ -189,7 +189,7 @@
 
         </section>
         <div>
-            <a href="carts" style="    
+            <a href="carttours" style="    
                position: fixed;
                bottom: 200px;
                right: 50px;
@@ -204,7 +204,7 @@
                flex-direction: column;">
                 <i class="bi-cart-fill me-1"></i>
                 Bought
-                <span>${sessionScope.carts.size()}</span>
+                <span>${sessionScope.carttours.size()}</span>
             </a>
         </div>
         <%@include file="components/footer.jsp" %>
