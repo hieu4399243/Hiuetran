@@ -15,11 +15,13 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Contact {
-
+public static final String ADMIN="ADMIN";
+public static final String USER="USER";
     private int id;
     private String username;
     private String password;
     private int isSell;
     private int isAdmin;
     private String displayName;
+    private String role;
 }

@@ -2,19 +2,19 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>FoodController</servlet-name>
-        <servlet-class>control.FoodController</servlet-class>
+        <servlet-class>control.sync.FoodController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SearchFood</servlet-name>
-        <servlet-class>control.SearchFood</servlet-class>
+        <servlet-class>control.sync.SearchFood</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DetailController</servlet-name>
-        <servlet-class>control.DetailController</servlet-class>
+        <servlet-class>control.sync.DetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Addfood</servlet-name>
-        <servlet-class>control.Addfood</servlet-class>
+        <servlet-class>control.sync.Addfood</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ContactServlet</servlet-name>
@@ -22,7 +22,7 @@
     </servlet>
     <servlet>
         <servlet-name>DetailControllerTours</servlet-name>
-        <servlet-class>control.DetailControllerTours</servlet-class>
+        <servlet-class>control.sync.DetailControllerTours</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginController</servlet-name>
@@ -56,8 +56,14 @@
         <servlet-name>DetailControllerTours</servlet-name>
         <url-pattern>/detailtours</url-pattern>
     </servlet-mapping>
- 
-
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern/>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthorizationFilter</filter-name>
+        <url-pattern/>
+    </filter-mapping>
     <session-config>
         <session-timeout>
             30

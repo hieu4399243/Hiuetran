@@ -172,7 +172,7 @@
                                         <!-- Product actions-->
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                             <div class="text-center">
-                                                <a class="btn btn-outline-warning" href="add?productId=${P.id}"
+                                                <a class="btn btn-outline-warning" onclick="addToCartAsync(${P.id})"
                                                    >Đặt món</a
                                                 >
                                             </div>
@@ -204,9 +204,25 @@
                flex-direction: column;">
                 <i class="bi-cart-fill me-1"></i>
                 Bought
-                <span>${sessionScope.carts.size()}</span>
+                <span id="cart_number">${sessionScope.carts.size()}</span>
             </a>
         </div>
         <%@include file="components/footer.jsp" %>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+                                                    function addToCartAsync(productId) {
+                                                        axios.get('add-async', {
+                                                            params: {
+                                                                productId: productId
+                                                            }
+                                                        }).then((response) => {
+                                                            //lấy data thanh công
+                                                            document.getElementById("cart_number").innerHTML = response.data;
+
+                                                            //Cập nhật view
+                                                            
+                                                        })
+                                                    }
+        </script>
     </body>
 </html>

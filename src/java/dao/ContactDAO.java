@@ -35,7 +35,8 @@ public class ContactDAO {
                         .password(rs.getString(3))
                         .isSell(rs.getInt(4))
                         .isAdmin(rs.getInt(5))
-                        .displayName(rs.getString(6)).build();
+                        .displayName(rs.getString(6))
+                        .role(rs.getString(7)).build();
                 return contact;
 
             }

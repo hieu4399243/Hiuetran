@@ -3,7 +3,7 @@
     Created on : Mar 7, 2022, 3:59:05 AM
     Author     : Admin
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -56,6 +56,17 @@
                             <li class="header-unfixed__list-item">
                                 <a href="Home.jsp" class="header-unfixed__item-link">Contact Us</a>
                             </li>
+                            <li class="header-unfixed__list-item">
+                                <c:choose>
+                                    <c:when test="${sessionScope.contact != null}">
+                                        <button class="header-unfixed__item-link" style="background-color:greenyellow;border-radius: 5px; margin-right: 10px">${sessionScope.contact.displayName}</button>
+                                        <a href="logout" class="header-unfixed__item-link" style="color: black">Đăng xuất</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="Sign.jsp" class="header-unfixed__item-link" style="color:black">Đăng Ký</a>
+                                    </c:otherwise>
+                                </c:choose>
+                            </li>
                         </ul>
                         <ul class="header-unfixed__search">
                             <li class="header-unfixed__search-item">
@@ -98,6 +109,17 @@
 
                             <li class="header-fixed__list-item">
                                 <a href="Home.jsp" class="header-fixed__item-link">Contact Us</a>
+                            </li>
+                            <li class="header-unfixed__list-item">
+                                <c:choose>
+                                    <c:when test="${sessionScope.contact != null}">
+                                        <button class="header-unfixed__item-link" style="background-color:greenyellow;border-radius: 5px; margin-right: 10px">${sessionScope.contact.displayName}</button>
+                                        <a href="logout" class="header-unfixed__item-link" style="color: black">Đăng xuất</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="Sign.jsp" class="header-unfixed__item-link" style="color:black">Đăng Ký</a>
+                                    </c:otherwise>
+                                </c:choose>
                             </li>
                         </ul>
                         <ul class="header-fixed__search">
