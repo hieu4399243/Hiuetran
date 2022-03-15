@@ -32,6 +32,22 @@
         <servlet-name>LoginContro</servlet-name>
         <servlet-class>control.LoginContro</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Manager</servlet-name>
+        <servlet-class>control.sync.Manager</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteManager</servlet-name>
+        <servlet-class>control.sync.DeleteManager</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddManagerController</servlet-name>
+        <servlet-class>control.sync.AddManagerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadController</servlet-name>
+        <servlet-class>control.sync.LoadController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FoodController</servlet-name>
         <url-pattern>/food</url-pattern>
@@ -64,6 +80,22 @@
         <filter-name>AuthorizationFilter</filter-name>
         <url-pattern/>
     </filter-mapping>
+    <servlet-mapping>
+        <servlet-name>Manager</servlet-name>
+        <url-pattern>/manager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteManager</servlet-name>
+        <url-pattern>/deletemanager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddManagerController</servlet-name>
+        <url-pattern>/addmanager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadController</servlet-name>
+        <url-pattern>/loadmanager</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

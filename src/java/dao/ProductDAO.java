@@ -35,7 +35,6 @@ public class ProductDAO {
                         .quantity(rs.getInt(3))
                         .price(rs.getDouble(4))
                         .imageUrl(rs.getString(5))
-
                         .categoryId(rs.getInt(6)).build();
                 list.add(product);
             }
@@ -60,7 +59,6 @@ public class ProductDAO {
                         .quantity(rs.getInt(3))
                         .price(rs.getDouble(4))
                         .imageUrl(rs.getString(5))
-  
                         .categoryId(rs.getInt(6)).build();
                 list.add(product);
             }
@@ -99,7 +97,6 @@ public class ProductDAO {
                         .quantity(rs.getInt(3))
                         .price(rs.getDouble(4))
                         .imageUrl(rs.getString(5))
-     
                         .categoryId(rs.getInt(6))
                         .sellid(rs.getInt(7)).build();
                 list.add(product);
@@ -140,7 +137,6 @@ public class ProductDAO {
                         .quantity(rs.getInt(3))
                         .price(rs.getDouble(4))
                         .imageUrl(rs.getString(5))
-    
                         .categoryId(rs.getInt(6)).build();
                 list.add(product);
             }
@@ -164,7 +160,6 @@ public class ProductDAO {
                         .quantity(rs.getInt(3))
                         .price(rs.getDouble(4))
                         .imageUrl(rs.getString(5))
-   
                         .categoryId(rs.getInt(6)).build();
                 return product;
             }
@@ -174,19 +169,43 @@ public class ProductDAO {
         return null;
     }
 
-    public void insert(String name, String quantity, String image, String price, String cateID, int sid) {
+    public void insert(String name, String quantity, String price, String image, String cateID, int sid) {
         String query = "INSERT [dbo].[Product] \n"
-                + "([id], [name], [quantity], [price],  [image_url], [category_id],[sell_id] \n"
+                + "([name], [quantity], [price],  [image_url], [category_id],[sell_id] \n"
                 + "VALUES (?, ?, ?, ?,  ?, ?)";
         try {
             Connection conn = new DBcontext().getConnection();
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, name);
-            ps.setString(2,quantity );
-            ps.setString(3,image);
-            ps.setString(4, price);
+            ps.setString(2, quantity);
+            ps.setString(3, price);
+            ps.setString(4, image);
             ps.setString(5, cateID);
             ps.setInt(6, sid);
+
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+        }
+    }
+
+    public void edit(String name, String quantity, String price, String image, String cateID,String  id) {
+        String query = "update product\n"
+                + "set name=?,\n"
+                + "quantity=?,\n"
+                + "price=?,\n"
+                + "image_url=?,\n"
+                + "category_id=? \n"
+                + "where id=?";
+        try {
+            Connection conn = new DBcontext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, name);
+            ps.setString(2, quantity);
+            ps.setString(3, price);
+            ps.setString(4, image);
+            ps.setString(5, cateID);
+            ps.setString(6, id);
 
             ps.executeUpdate();
 
