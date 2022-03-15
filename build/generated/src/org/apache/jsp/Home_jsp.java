@@ -11,6 +11,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_otherwise;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_when_test;
@@ -22,12 +23,14 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_choose = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_otherwise = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_when_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
+    _jspx_tagPool_c_if_test.release();
     _jspx_tagPool_c_choose.release();
     _jspx_tagPool_c_otherwise.release();
     _jspx_tagPool_c_when_test.release();
@@ -102,12 +105,16 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <a href=\"/ProjectAssignment/food\" class=\"header-unfixed__item-link\">ăn uống</a>\n");
       out.write("                            </li>\n");
       out.write("                            <li class=\"header-unfixed__list-item\">\n");
-      out.write("                                <a href=\"Home.jsp\" class=\"header-unfixed__item-link\">About us</a>\n");
+      out.write("                                <a href=\"/ProjectAssignment/tours\" class=\"header-unfixed__item-link\">About us</a>\n");
       out.write("                            </li>\n");
       out.write("\n");
       out.write("                            <li class=\"header-unfixed__list-item\">\n");
       out.write("                                <a href=\"Home.jsp\" class=\"header-unfixed__item-link\">Contact Us</a>\n");
       out.write("                            </li>\n");
+      out.write("                            ");
+      if (_jspx_meth_c_if_0(_jspx_page_context))
+        return;
+      out.write("\n");
       out.write("                            <li class=\"header-unfixed__list-item\">\n");
       out.write("                                ");
       if (_jspx_meth_c_choose_0(_jspx_page_context))
@@ -145,7 +152,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("                            </li>\n");
       out.write("                            <li class=\"header-fixed__list-item\">\n");
-      out.write("                                <a href=\"Tours.jsp\" class=\"header-fixed__item-link\">Tours</a>\n");
+      out.write("                                <a href=\"/ProjectAssignment/tours\" class=\"header-fixed__item-link\">Tours</a>\n");
       out.write("                            </li>\n");
       out.write("                            <li class=\"header-fixed__list-item\">\n");
       out.write("                                <a href=\"/ProjectAssignment/food\" class=\"header-fixed__item-link\">Ăn Uống</a>\n");
@@ -157,6 +164,10 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <li class=\"header-fixed__list-item\">\n");
       out.write("                                <a href=\"Home.jsp\" class=\"header-fixed__item-link\">Contact Us</a>\n");
       out.write("                            </li>\n");
+      out.write("                            ");
+      if (_jspx_meth_c_if_1(_jspx_page_context))
+        return;
+      out.write("\n");
       out.write("                            <li class=\"header-unfixed__list-item\">\n");
       out.write("                                ");
       if (_jspx_meth_c_choose_1(_jspx_page_context))
@@ -1119,6 +1130,36 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     }
   }
 
+  private boolean _jspx_meth_c_if_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent(null);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.contact.isAdmin==1}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                                <li class=\"header-unfixed__list-item\">\n");
+        out.write("                                    <a href=\"/ProjectAssignment/manager\" class=\"header-unfixed__item-link\">Manager</a>\n");
+        out.write("                                </li>\n");
+        out.write("                            ");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    return false;
+  }
+
   private boolean _jspx_meth_c_choose_0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -1208,6 +1249,36 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_1.setParent(null);
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.contact.isAdmin==1}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+    if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                                <li class=\"header-unfixed__list-item\">\n");
+        out.write("                                    <a href=\"/ProjectAssignment/manager\" class=\"header-unfixed__item-link\" style=\"color:black\">Manager</a>\n");
+        out.write("                                </li>\n");
+        out.write("                            ");
+        int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
     return false;
   }
 

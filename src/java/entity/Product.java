@@ -20,8 +20,8 @@ public class Product {
     private int quantity;
     private double price;
     private String imageUrl;
-    private String createdDate;
     private int categoryId;
+    private int sellid;
 
     
     

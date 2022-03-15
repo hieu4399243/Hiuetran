@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Đăng nhập tài khoản</title>
+        <title>Đăng ký tài khoản</title>
         <link href="css/Sign.css" rel="stylesheet" type="text/css"/>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
@@ -30,27 +30,27 @@
                 <div class="square" style="--i:4;"></div>
                 <div class="container">
                     <div class="form">
-                        <h2>Login Form</h2>
-
-                        <form action="login" method="post">
+                        <h2>Sign Up</h2>
+                        <form action="signup" method="post">
                             <h3 class="text-danger">${error}</h3>
+                            <h3 class="text-danger">${error1}</h3>
                             <div class="inputBox">
                                 <input type="text" placeholder="Username" name="user"> 
                             </div>
                             <div class="inputBox">
-                                <input type="password" placeholder="password" name="pass">
+                                <input type="password" placeholder="Password" name="pass">
+                            </div>
+                            <div class="inputBox">
+                                <input type="password" placeholder="Repeatpass" name="repass">
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" placeholder="Displayname" name="displayname">
                             </div>
                             <br>
-                            <div class="mb-3 form-check" >
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
-                                <label class="form-check-label" for="exampleCheck1" style="color: springgreen">Remember me</label>
-                            </div>
+
 
                             <br>
-                            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>Sign in</button>
-
-                            <p class="forget">Forgot Password ? <a href="#">Click Here</a></p>
-                            <p class="forget">Don't have an account ? <a href="Signup.jsp">Sign up</a></p>
+                            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>Sign up</button>
 
 
                         </form>

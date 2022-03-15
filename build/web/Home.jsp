@@ -43,12 +43,17 @@
                                 <a href="/ProjectAssignment/food" class="header-unfixed__item-link">ăn uống</a>
                             </li>
                             <li class="header-unfixed__list-item">
-                                <a href="Home.jsp" class="header-unfixed__item-link">About us</a>
+                                <a href="/ProjectAssignment/tours" class="header-unfixed__item-link">About us</a>
                             </li>
 
                             <li class="header-unfixed__list-item">
                                 <a href="Home.jsp" class="header-unfixed__item-link">Contact Us</a>
                             </li>
+                            <c:if test="${sessionScope.contact.isAdmin==1}">
+                                <li class="header-unfixed__list-item">
+                                    <a href="/ProjectAssignment/manager" class="header-unfixed__item-link">Manager</a>
+                                </li>
+                            </c:if>
                             <li class="header-unfixed__list-item">
                                 <c:choose>
                                     <c:when test="${sessionScope.contact != null}">
@@ -91,7 +96,7 @@
 
                             </li>
                             <li class="header-fixed__list-item">
-                                <a href="Tours.jsp" class="header-fixed__item-link">Tours</a>
+                                <a href="/ProjectAssignment/tours" class="header-fixed__item-link">Tours</a>
                             </li>
                             <li class="header-fixed__list-item">
                                 <a href="/ProjectAssignment/food" class="header-fixed__item-link">Ăn Uống</a>
@@ -103,6 +108,11 @@
                             <li class="header-fixed__list-item">
                                 <a href="Home.jsp" class="header-fixed__item-link">Contact Us</a>
                             </li>
+                            <c:if test="${sessionScope.contact.isAdmin==1}">
+                                <li class="header-unfixed__list-item">
+                                    <a href="/ProjectAssignment/manager" class="header-unfixed__item-link" style="color:black">Manager</a>
+                                </li>
+                            </c:if>
                             <li class="header-unfixed__list-item">
                                 <c:choose>
                                     <c:when test="${sessionScope.contact != null}">
